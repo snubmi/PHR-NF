@@ -20,6 +20,16 @@ The data underlying this article cannot be shared publicly due to the privacy of
 - utils.py: Defines CustomCosineAnnealingWarmUpRestarts.
 
 ## Installation
+First of all, we recommend to use [Pytorch docker](https://hub.docker.com/layers/pytorch/pytorch/1.10.0-cuda11.3-cudnn8-runtime/images/sha256-cf9197f9321ac3f49276633b4e78c79aa55f22578de3b650b3158ce6e3481f61?context=explore) if possible. Note that you need to install git for installation of FrEIA. (apt update => apt install git-all)
+
+These two packages might be critical to execute our code.
+- pytorch: 1.10.0 (cuda 11.3)
+- [FrEIA](https://github.com/vislearn/FrEIA/commit/76a7d0ac82b07851582e4b0731b2f325a31b4c1d)
+
+The all necessary packages can be installed with:
+```
+python3 -m pip install -U -r requirements.txt
+```
 
 ## How to run
 - --seed: Fixs seed as the number (Default: 0)
@@ -33,4 +43,4 @@ python3 main.py --data data/phr_data.csv --seed 0 --use-altub --eval-all --categ
 ```
 
 ## Architecture of Normalizing Flow Model on PHR
-![PHR-NF](./images/fig-flow-flow.svg)
+![PHR-NF](PHR_NF.png)
