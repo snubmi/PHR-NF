@@ -27,7 +27,7 @@ The data underlying this article cannot be shared publicly due to the privacy of
 - --eval-all: Evaluates for every possible test set. Being highly time-consuming, not recommended generally.
 - --category: Defines a target (a type of disease)
 
-- Run the code like:
+Run the code like:
 ```
 python3 main.py --data data/phr_data.csv --seed 0 --use-altub --eval-all --category diabetes
 ```
