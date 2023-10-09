@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1&height=200&section=header&text=Conditional%20Normalizing%20Flow%20and%20Class%20Imbalance&fontSize=40&animation=fadeIn&fontColor=000000" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1&height=200&section=header&text=Normalizing%20Flow%20and%20Class%20Imbalance&fontSize=40&animation=fadeIn&fontColor=000000" />
 
 # A machine learning approach using conditional normalizing flow to address extreme class imbalance problems in personal health records
 Yeongmin Kim&dagger;, Wongyung Choi&dagger;, Woojeong Choi, Grace Ko, Hwan-Cheol Kim, Dokyoon Kim, Dong-gi Lee, Dong Wook Shin, and Younghee Lee\*
