@@ -1,13 +1,17 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1&height=200&section=header&text=Normalizing%20Flow%20and%20Class%20Imbalance&fontSize=40&animation=fadeIn&fontColor=000000" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1&height=200&section=header&text=Conditional%20Normalizing%20Flow%20and%20Class%20Imbalance&fontSize=40&animation=fadeIn&fontColor=000000" />
 
-# A novel machine learning approach using normalizing flow to address extreme class imbalance problems in personal health records
-Yeongmin Kim&dagger;, Wongyung Choi&dagger;, Woojeong Choi&dagger;, Grace Ko&dagger;, Younghee Lee\*
+# A machine learning approach using conditional normalizing flow to address extreme class imbalance problems in personal health records
+Yeongmin Kim&dagger;, Wongyung Choi&dagger;, Woojeong Choi, Grace Ko, Hwan-Cheol Kim, Dokyoon Kim, Dong-gi Lee, Dong Wook Shin, and Younghee Lee\*
 
 \*Correspondence author  
 †Equal contribution
 
 ## Abstract
-The class imbalance problem in Personal Health Records (PHRs) limits performance when analyzing such data using machine learning algorithms. To tackle this challenge, we developed a conditional normalizing flow algorithm with semi-supervised anomaly detection. We compared our novel approach with Light Gradient Boosting Machine, which is widely used in classification tasks, and also with a one-class suppot vector machine, Gaussian mixture model, and autoencoder, which are representative semi-supervised anomaly detection algorithms. To train and evaluate models, we used PHR data comprised of medical check-up, life-log, and genetic testing data, and defined as the target variables six chronic diseases (e.g., obesity, diabetes). We found the proposed normalizing flow model to outperform the other tested models when used on an extremely imbalanced class. We further demonstrated that classification models with class weights performed poorly in scenarios with low base rate regardless of a biological context, unlike the proposed normalizing flow model.
+**Background**: Supervised machine learning models have been widely used to predict and get insight into diseases by classifying patients based on personal health records. However, a class imbalance is an obstacle that disrupts the training of the models. In this study, we aimed to address class imbalance with a conditional normalizing flow model, one of the deep-learning-based semi-supervised models for anomaly detection. It is the first introduction of the normalizing flow algorithm for tabular biomedical data.
+**Methods**: We collected personal health records from South Korean citizens (n=706), featuring genetic data obtained from direct-to-customer service (microarray chip), medical health check-ups, and lifestyle log data. Based on the health check-up data, six chronic diseases were labeled (obesity, diabetes, hypertriglyceridemia, dyslipidemia, liver dysfunction, and hypertension). After preprocessing, supervised classification models and semi-supervised anomaly detection models, including conditional normalizing flow, were evaluated for the classification of diabetes, which had extreme target imbalance (about 2%), based on AUROC and AUPRC. In addition, we evaluated their performance under the assumption of insufficient collection for patients with other chronic diseases by undersampling disease-affected samples.  
+**Results**: While LightGBM (the best-performing model among supervised classification models) showed AUPRC 0.16 and AUROC 0.82, conditional normalizing flow achieved AUPRC 0.34 and AUROC 0.83 during fifty evaluations of the classification of diabetes, whose base rate was very low, at 0.02. Moreover, conditional normalizing flow performed better than the supervised model under a few disease-affected data numbers for the other five chronic diseases – obesity, hypertriglyceridemia, dyslipidemia, liver dysfunction, and hypertension. For example, while LightGBM performed AUPRC 0.20 and AUROC 0.75, conditional normalizing flow showed AUPRC 0.30 and AUROC 0.74 when predicting obesity, while positive undersampling lowered the base rate to 0.02. 
+**Conclusions**: Our research suggests the utility of conditional normalizing flow, particularly when the available cases are limited, for predicting chronic diseases using personal health records. This approach offers an effective solution to deal with sparse data and extreme class imbalances commonly encountered in the biomedical context.
+
 
 ## Datasets
 The data underlying this article cannot be shared publicly due to the privacy of individuals that participated in the study.
@@ -15,7 +19,7 @@ The data underlying this article cannot be shared publicly due to the privacy of
 ## Code Organization
 - constant.py: Usuful constants including key hyperparameters
 - main.py: Execution of an overall process
-- model_flow.py: Implementation of the architecture of normalizing flow
+- model_flow.py: Implementation of the architecture of conditional normalizing flow
 - train.py: Data preparation and train of the model
 - utils.py: Defines CustomCosineAnnealingWarmUpRestarts.
 
@@ -42,5 +46,5 @@ Run the code like:
 python3 main.py --data data/phr_data.csv --seed 0 --use-altub --eval-all --category diabetes
 ```
 
-## Architecture of Normalizing Flow Model on PHR
+## Architecture of Conditional Normalizing Flow Model on PHR
 ![PHR-NF](PHR_NF.png)
