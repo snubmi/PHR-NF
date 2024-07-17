@@ -48,9 +48,9 @@ python3 main.py --data data/phr_data.csv --seed 0 --use-altub --eval-all --categ
 
 ## Citation
 
-```
+
 Kim, Y., Choi, W., Choi, W. et al. A machine learning approach using conditional normalizing flow to address extreme class imbalance problems in personal health records. BioData Mining 17, 14 (2024). https://doi.org/10.1186/s13040-024-00366-0
-```
+
 
 ## Architecture of Conditional Normalizing Flow Model on PHR
 ![PHR-NF](PHR_NF.png)
