@@ -1,7 +1,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1&height=200&section=header&text=Normalizing%20Flow%20and%20Class%20Imbalance&fontSize=40&animation=fadeIn&fontColor=000000" />
 
 # A machine learning approach using conditional normalizing flow to address extreme class imbalance problems in personal health records
-Yeongmin Kim&dagger;, Wongyung Choi&dagger;, Woojeong Choi, Grace Ko, Hwan-Cheol Kim, Dokyoon Kim, Dong-gi Lee, Dong Wook Shin, and Younghee Lee\*
+Yeongmin Kim&dagger;, Wongyung Choi&dagger;, Woojeong Choi, Grace Ko, Seonggyun Han, Hwan-Cheol Kim, Dokyoon Kim, Dong-gi Lee, Dong Wook Shin, and Younghee Lee\*
 
 \*Correspondence author  
 †Equal contribution
@@ -44,6 +44,12 @@ python3 -m pip install -U -r requirements.txt
 Run the code like:
 ```
 python3 main.py --data data/phr_data.csv --seed 0 --use-altub --eval-all --category diabetes
+```
+
+## Citation
+
+```
+Kim, Y., Choi, W., Choi, W. et al. A machine learning approach using conditional normalizing flow to address extreme class imbalance problems in personal health records. BioData Mining 17, 14 (2024). https://doi.org/10.1186/s13040-024-00366-0
 ```
 
 ## Architecture of Conditional Normalizing Flow Model on PHR
